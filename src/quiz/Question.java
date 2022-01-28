@@ -1,6 +1,6 @@
 package quiz;
 
-public class Question {
+public abstract class Question {
     private String questionBody;
     private String correctAnswer;
     private int pointValue;
@@ -17,24 +17,12 @@ public class Question {
         return questionBody;
     }
 
-    public void setQuestionBody(String questionBody) {
-        this.questionBody = questionBody;
-    }
-
     public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
     public int getPointValue() {
         return pointValue;
-    }
-
-    public void setPointValue(int pointValue) {
-        this.pointValue = pointValue;
     }
 
     public boolean isCorrect() {
@@ -44,4 +32,6 @@ public class Question {
     public void setCorrect(boolean correct) {
         isCorrect = correct;
     }
+
+    public abstract void checkAnswer(String userResponse);
 }

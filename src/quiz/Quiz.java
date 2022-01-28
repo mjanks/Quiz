@@ -1,6 +1,7 @@
 package quiz;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Quiz {
     private ArrayList<Question> listOfQuestions;
@@ -13,9 +14,18 @@ public class Quiz {
         listOfQuestions.add(aQuestion);
     }
 
-    public void displayQuiz() {
+    public void displayQuestions() {
         for(Question question : listOfQuestions) {
             System.out.println(question.getQuestionBody());
+        }
+    }
+
+    public void startQuiz() {
+        Scanner scan = new Scanner(System.in);
+        for(Question question : listOfQuestions) {
+            System.out.println(question.getQuestionBody());
+            String response = scan.nextLine();
+            question.checkAnswer(response);
         }
     }
 }
