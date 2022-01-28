@@ -8,10 +8,12 @@ public class TrueFalse extends Question {
 
     @Override
     public void checkAnswer(String response) {
-        if(response.equals(this.getCorrectAnswer())) {
+        if(response.equalsIgnoreCase(getCorrectAnswer())) {
             System.out.println("Correct!");
+            setCorrect(true);
         } else {
             System.out.println("Incorrect");
+            setCorrect(false);
         }
     }
 
